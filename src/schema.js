@@ -45,6 +45,10 @@ const typeDefs = gql`
     numberOfViews: Int
     "The track's complete array of Modules"
     modules: [Module!]!
+    "The track's full duration, in seconds"
+    durationInSeconds: Int
+    "The module's length in seconds"
+    length: Int @deprecated(reason: "Use durationInSeconds")
   }
 
   "Author of a complete Track or a Module"
@@ -67,6 +71,10 @@ const typeDefs = gql`
     content: String
     "The module's video url, for video-based modules"
     videoUrl: String
+    "The module's video duration, in seconds"
+    durationInSeconds: Int
+    "The track's approximate length to complete, in seconds"
+    length: Int @deprecated(reason: "Use durationInSeconds")
   }
 `;
 
